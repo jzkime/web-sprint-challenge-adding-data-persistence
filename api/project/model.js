@@ -19,6 +19,7 @@ const getProjects = (id) => {
             .where('project_id', id)
             .first()
             .then(proj => {
+                if(!proj) return null
                 return alterComp(proj, 'project_completed');
             })
     } else {
